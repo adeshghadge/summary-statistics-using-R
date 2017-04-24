@@ -28,7 +28,7 @@ result.2 <- ddply(sites.data2, .(column_name), summarize, quantiles = quantile(m
 result <- merge.data.frame(result.2, result.1, by = "column_name", all=TRUE)
 
 #Set all nds to a negative integer
-result[is.na(res)] <- -99
+result[is.na(result)] <- -99
 
 #Order by column used to merge the data frames
 result <- result[order(result$column_name),]
