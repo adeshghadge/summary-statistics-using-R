@@ -20,7 +20,7 @@ library(plyr)
 result.1 <- ddply(sites.data1, .(column_name), summarize, quantiles = quantile(metric, c(.50)))
 result.2 <- ddply(sites.data2, .(column_name), summarize, quantiles = quantile(metric, c(.50)))
 
-#Uncomment the following code to get all the percentiles - 10th, 25th, 50th (median), 75th, and 90th
+#Uncomment the following code to get all the percentiles - 10th, 25th, 50th (median), 75th, 90th, and Sample Size
 #result.1 <- sites.data1[, .(p10 = quantile(metric, c(.10)), p25 = quantile(metric, c(.25)), median = quantile(metric, c(.50)), p75 = quantile(metric, c(.75)), p90 = quantile(metric, c(.90)), sampleN = .N), by=.(column_name)]
 #result.2 <- sites.data2[, .(p10 = quantile(metric, c(.10)), p25 = quantile(metric, c(.25)), median = quantile(metric, c(.50)), p75 = quantile(metric, c(.75)), p90 = quantile(metric, c(.90)), sampleN = .N), by=.(column_name)]
 
