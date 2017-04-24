@@ -5,8 +5,8 @@ library(RODBC)
 myconn <-odbcDriverConnect('Driver={SQL Server}; Server=SERVER_NAME; Database=DB_NAME; Port=1433; PROTOCOL=TCPIP; trusted_connection=yes;UID=USERNAME;PWD=PASSWORD')
 
 #Load data for two different numeric columns in two separate datasets. Add more columns to create smaller subsets 
-sites.M1 <- sqlQuery(myconn, 'select column_name, number_column1 from Site_Metrics_Master where ISNUMERIC(number_column1) = 1')
-sites.M2 <- sqlQuery(myconn, "select column_name, number_column2 from Site_Metrics_Master where ISNUMERIC(number_column2) = 1")
+sites.M1 <- sqlQuery(myconn, 'select column_name, number_column1 from Table where ISNUMERIC(number_column1) = 1')
+sites.M2 <- sqlQuery(myconn, "select column_name, number_column2 from Table where ISNUMERIC(number_column2) = 1")
 
 close(myconn)
 
